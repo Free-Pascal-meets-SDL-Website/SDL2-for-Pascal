@@ -35,6 +35,7 @@ const
 var
   Flag: TSDL_Init;
 begin
+  write('Start SDL2 inilization test... ');
   for Flag in Flags do
   begin
     try
@@ -50,5 +51,6 @@ begin
     end;
     SDL_Quit;
   end;
+  writeln(' finished.');
 end.
 
