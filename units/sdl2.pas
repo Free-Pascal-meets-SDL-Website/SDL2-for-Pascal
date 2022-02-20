@@ -124,7 +124,9 @@ const
 
   {$IFDEF UNIX}
     {$IFDEF DARWIN}
-      SDL_LibName = 'libSDL2.dylib';
+      //SDL_LibName = 'libSDL2.dylib';
+      SDL_LibName = '';
+      {$LINKFRAMEWORK SDL2}
     {$ELSE}
       {$IFDEF FPC}
         SDL_LibName = 'libSDL2.so';
@@ -140,11 +142,6 @@ const
       {$linklib libSDL2}
     {$ENDIF}
   {$ENDIF}
-
-  {$IFDEF DARWIN}
-    {$DEFINE MACOS}    // quick test-hack: Make MACOS decl. available for DARWIN systems (better solution has to be found!)
-  {$ENDIF}
-
 
 {$I ctypes.inc}                  // C data types
 
