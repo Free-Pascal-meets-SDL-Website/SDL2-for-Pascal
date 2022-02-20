@@ -46,11 +46,15 @@ jobs:
         with:
           source: units/sdl2_ttf.pas
           verbosity: ewnh
-      - name: Install SDL2 library
+      - name: Install SDL2 library and check version
         run: brew install sdl2
+        run: sdl2-config --version
+      - name: Get SDL2 library path
+        run: sdl2-config --libs
       - name: Test 1 - Compile Init Test
         uses: suve/GHActions-FPC@v0.3.2
         with:
+          flags: -lSDL2
           source: tests/testinit.pas
           verbosity: ewnh
   ubuntu-20-04:
