@@ -46,8 +46,9 @@ jobs:
         with:
           source: units/sdl2_ttf.pas
           verbosity: ewnh
-      - name: Install SDL2 library and check version
+      - name: Install SDL2 library
         run: brew install sdl2
+      - name: Check SDL2 library version
         run: sdl2-config --version
       - name: Get SDL2 library path
         run: sdl2-config --libs
