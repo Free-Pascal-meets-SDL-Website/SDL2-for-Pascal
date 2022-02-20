@@ -141,6 +141,10 @@ const
     {$ENDIF}
   {$ENDIF}
 
+  {$IFDEF DARWIN}
+    {$DEFINE MACOS}    // quick test-hack: Make MACOS decl. available for DARWIN systems (better solution has to be found!)
+  {$ENDIF}
+
 
 {$I ctypes.inc}                  // C data types
 
