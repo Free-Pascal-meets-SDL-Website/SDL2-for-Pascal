@@ -125,6 +125,9 @@ const
   {$IFDEF UNIX}
     {$IFDEF DARWIN}
       SDL_LibName = 'libSDL2.dylib';
+      {$IFDEF FPC}
+        {$LINKLIB libSDL2}
+      {$ENDIF}
       //SDL_LibName = '';
       //{$LINKFRAMEWORK SDL2}
     {$ELSE}
