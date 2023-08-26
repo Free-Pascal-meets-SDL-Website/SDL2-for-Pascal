@@ -114,24 +114,15 @@ jobs:
           verbosity: ewnh
       - name: Install SDL2 library
         run: sudo apt-get install libsdl2-dev
-      - name: Test 1 - Compile Init Test
+      - name: Compile SDL2-for-Pascal Test Framework and Tests
         uses: suve/GHActions-FPC@v0.4.0
         with:
-          source: tests/testinit.pas
+          source: tests/sdl2forpascaltests.pas
+          flags: Fu"fptest/src;fptest/3rdparty/epiktimer;../units"
           verbosity: ewnh
-      - name: Test 1 - Run Init Test
+      - name: Run SDL2-for-Pascal Tests
         run: |
-          mkdir ~/tmp
-          export XDG_RUNTIME_DIR=~/tmp
-          ./tests/testinit
-      - name: Test 2 - Compile Version Test
-        uses: suve/GHActions-FPC@v0.4.0
-        with:
-          source: tests/testversion.pas
-          verbosity: ewnh
-      - name: Test 2 - Run Version Test
-        run: |
-          ./tests/testversion
+          ./tests/sdl2forpascaltests
   windows-2022:
     # skip job temporarily
     if: false
