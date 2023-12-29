@@ -120,7 +120,7 @@ jobs:
         uses: suve/GHActions-FPC@v0.4.0
         with:
           source: tests/sdl2forpascaltests.pas
-          flags: Fuunits Futests/fptest/src Futests/3rdparty/epiktimer
+          flags: Fuunits Futests/fptest/src Futests/fptest/3rdparty/epiktimer
           verbosity: ewnh
       - name: Run SDL2-for-Pascal Tests
         run: |
