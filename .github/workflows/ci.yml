@@ -116,17 +116,11 @@ jobs:
           verbosity: ewnh
       - name: Install SDL2 library
         run: sudo apt-get install libsdl2-dev
-      - name: TEST compile fptest units
-        uses: suve/GHActions-FPC@v0.4.0
-        with:
-          source: tests/fptest/src/TextTestRunner.pas
-          flags:
-          verbosity: ewnh
       - name: Compile SDL2-for-Pascal Test Framework and Tests
         uses: suve/GHActions-FPC@v0.4.0
         with:
           source: tests/sdl2forpascaltests.pas
-          flags: Fu"tests/fptest/src;tests/fptest/3rdparty/epiktimer;../units"
+          flags: vu Fu"tests/fptest/src;tests/fptest/3rdparty/epiktimer;units"
           verbosity: ewnh
       - name: Run SDL2-for-Pascal Tests
         run: |
