@@ -82,8 +82,6 @@ jobs:
            sudo apt install fpc
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          ref: new-tests
       - name: Compile SDL2 unit
         uses: suve/GHActions-FPC@v0.4.0
         with:
